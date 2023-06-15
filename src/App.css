@@ -6,7 +6,7 @@
 .App {
   min-height: 100vh;
   display: flex;
-  background:#F8E8EE;
+  background:#D0F5BE;
 }
 .quote{
   margin: auto;
@@ -14,9 +14,9 @@
   max-width: 300px;
   min-height: 150px;
   padding: 30px;
-  background: #FDCEDF;
+  background: #FBFFDC;
   border-radius: 4px;
-  box-shadow: 24px 24px 1px rgba(0, 0,0, 0.3);
+  box-shadow: 24px 24px 1px rgba(37, 37, 37, 0.333);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -43,9 +43,10 @@ button{
   font-size: 14px;
   border-radius: 4px;
   cursor: pointer;
-  transition: all 900ms ease-in-out;
+  transition: all 100ms ease-in;
 }
 .btn:hover{
+  color: #242425;
   background: rgb(116, 161, 189);
 }
 
@@ -53,7 +54,7 @@ button{
   text-align:center;
   padding-top: 4px;
   padding-bottom: 8px;
-  background-color: #F9F5F6;
+  background-color: #98EECC;
 }
 
 
@@ -61,7 +62,7 @@ button{
 /* Style the header with a grey background and some padding */
 .header {
   overflow: hidden;
-  background-color: #F9F5F6;
+  background-color: #98EECC;
   padding: 20px 10px;
 }
 

@@ -1,12 +1,14 @@
 import React, { useEffect ,useRef } from 'react';
 import { useState } from 'react';
+import Data from './Data';
 //  npm install react-icons --save then use below thing
-import { BsInstagram,BsTwitter,BsFacebook} from "react-icons/bs";
+import { BsInstagram,BsTwitter,BsFacebook,BsEmojiLaughing} from "react-icons/bs";
+
 import './App.css';
 
 const App = () => {
 
-  const [quotes,setQuotes] = useState('');
+  const [Jokes,setJokes] = useState('');
   // const textref = useRef();
   // var colorArray = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
 	// 	  '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
@@ -25,18 +27,23 @@ const App = () => {
   //   .then(data => console.log(data))
   // }
 
-  const getQuotes = ()=>{
-    fetch("https://type.fit/api/quotes")
-    .then((res) => res.json())
-    .then ((data) =>{
-      let randomNum = Math.floor(Math.random()*data.length);
-      setQuotes(data[randomNum]);
-      console.log(data[randomNum]);
-    });
-  };
+  // const getQuotes = ()=>{
+  //   fetch("https://icanhazdadjoke.com/")
+  //   .then((res) => res.json())
+  //   .then ((data) =>{
+  //     let randomNum = Math.floor(Math.random()*data.length);
+  //     setQuotes(data[randomNum]);
+  //     console.log(data[randomNum]);
+  //   });
+  // };
+
+  const getJokes = ()=>{
+   setJokes(Data[Math.floor(Math.random()*Data.length)]);
+  }
+
   
   useEffect(()=>{
-    getQuotes()
+    getJokes()
   },[]);
   //show quotes in different color
   // useEffect(()=>{
@@ -45,16 +52,18 @@ const App = () => {
   return (
    <>
    <div class="header">
-  <a  class="logo">Quotes</a>
+  <a  class="logo"><BsEmojiLaughing /> Jokes</a>
   </div>
   <div className='App'>
     <div className='quote'>
       {/* used when we need different color
     <p ref={textref}>{quotes.text}</p> */}
-      <p >{quotes.text}</p>
-      <p>Author: {quotes.author}</p>
+   
+      <p >"{Jokes.setup}"</p>
+      <p>"{Jokes.punchline}"</p>
+      {/* <p>Author: {quotes.punchline}</p> */}
   <div className='btnContainer'>
-    <button className='btn' onClick={getQuotes}>Get Quote</button>
+    <button className='btn' onClick={getJokes}>Get Joke</button>
 
   </div>
     </div>
